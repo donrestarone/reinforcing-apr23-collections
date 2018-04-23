@@ -128,7 +128,7 @@ def add_key_value_pair(article_data)
 	article_data.each do |article|
 		article[:views] = 0
 	end
-	article_count = article_data.count 
+	#article_count = article_data.count 
 	
 	#p article_data
 	#p "there are #{article_count} articles"
@@ -149,22 +149,21 @@ def read_article(article_data)
 	return random_article
 end 
 
-read_article(article_array)
-read_article(article_array)
-read_article(article_array)
+100.times do 
 read_article(article_array)
 
+end
 
 
 
 
 def display_views(data)
-	articles = add_key_value_pair(data)
+	# articles = add_key_value_pair(data)
 
-	#for the number of articles invoke the method read article 
-	data.count.times do
-		read_article(data)
-	end
+	# #for the number of articles invoke the method read article 
+	# data.count.times do
+	# 	read_article(data)
+	# end
 	
 	data.each do |article|
 		p "Title: #{article[:webTitle]} views: #{article[:views]}"
