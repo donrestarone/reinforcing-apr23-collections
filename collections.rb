@@ -101,4 +101,52 @@ isHosted: false
 }
 ]}
 }
+	#testing data to get a feel for what it is
+		# puts data[:results].class 
+
+		# puts data[:response][:results]
+		# puts data[:response][:results][0]
+
+		# array = data[:response][:results]
+		# puts array
+		# array.each do |single_hash|
+		# 	p single_hash
+		# end 
+
+
+
+article_array = data[:response][:results]
+
+def add_key_value_pair(article_data)
+	article_data.each do |article|
+		article[:views] = 0
+	end
+	article_count = article_data.count 
+	
+	p article_data
+	p "there are #{article_count} articles"
+	return article_data
+end 
+
+add_key_value_pair(article_array)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
