@@ -1,40 +1,40 @@
-data = { response: {
-status: "ok",
-userTier: "developer",
-total: 9772,
-startIndex: 1,
-pageSize: 10,
-currentPage: 1,
-pages: 978,
-orderBy: "relevance",
-results: [
-{ id: "film/2017/jul/25/daniel-craig-judi-dench-and-idris-elba-toronto-film-festival",
-type: "article",
-sectionId: "film",
-sectionName: "Film",
-webPublicationDate: "2017-07-25T14:51:27Z",
-webTitle: "Daniel Craig, Judi Dench and Idris Elba lead British invasion of Toronto film festival",
-webUrl: "https://www.theguardian.com/film/2017/jul/25/daniel-craig-judi-dench-and-idris-elba-toronto-film-festival",
-apiUrl: "https://content.guardianapis.com/film/2017/jul/25/daniel-craig-judi-dench-and-idris-elba-toronto-film-festival",
-isHosted: false },
-{ id: "us-news/2017/jun/27/trump-name-scrubbed-toronto-canada-hotel",
-type: "article",
-sectionId: "us-news",
-sectionName: "US news",
-webPublicationDate: "2017-06-27T22:49:50Z",
-webTitle: "Trump's name to be scrubbed from high-rise building in Toronto",
-webUrl: "https://www.theguardian.com/us-news/2017/jun/27/trump-name-scrubbed-toronto-canada-hotel",
-apiUrl: "https://content.guardianapis.com/us-news/2017/jun/27/trump-name-scrubbed-toronto-canada-hotel",
-isHosted: false },
-{ id: "football/blog/2017/may/08/toronto-fc-mls-michael-bradley-seattle",
-type: "article",
-sectionId: "football",
-sectionName: "Football",
-webPublicationDate: "2017-05-08T13:06:11Z",
-webTitle: "Toronto FC's impressive win backs up Bradley's 'best team in MLS' claim | Matt Pentz",
-webUrl: "https://www.theguardian.com/football/blog/2017/may/08/toronto-fc-mls-michael-bradley-seattle",
-apiUrl: "https://content.guardianapis.com/football/blog/2017/may/08/toronto-fc-mls-michael-bradley-seattle",
-isHosted: false },
+data = { 	response: {
+			status: "ok",
+			userTier: "developer",
+			total: 9772,
+			startIndex: 1,
+			pageSize: 10,
+			currentPage: 1,
+			pages: 978,
+			orderBy: "relevance",
+			results: [
+					{ id: "film/2017/jul/25/daniel-craig-judi-dench-and-idris-elba-toronto-film-festival",
+					type: "article",
+					sectionId: "film",
+					sectionName: "Film",
+					webPublicationDate: "2017-07-25T14:51:27Z",
+					webTitle: "Daniel Craig, Judi Dench and Idris Elba lead British invasion of Toronto film festival",
+					webUrl: "https://www.theguardian.com/film/2017/jul/25/daniel-craig-judi-dench-and-idris-elba-toronto-film-festival",
+					apiUrl: "https://content.guardianapis.com/film/2017/jul/25/daniel-craig-judi-dench-and-idris-elba-toronto-film-festival",
+					isHosted: false },
+			{ id: "us-news/2017/jun/27/trump-name-scrubbed-toronto-canada-hotel",
+			type: "article",
+			sectionId: "us-news",
+			sectionName: "US news",
+			webPublicationDate: "2017-06-27T22:49:50Z",
+			webTitle: "Trump's name to be scrubbed from high-rise building in Toronto",
+			webUrl: "https://www.theguardian.com/us-news/2017/jun/27/trump-name-scrubbed-toronto-canada-hotel",
+			apiUrl: "https://content.guardianapis.com/us-news/2017/jun/27/trump-name-scrubbed-toronto-canada-hotel",
+			isHosted: false },
+					{ id: "football/blog/2017/may/08/toronto-fc-mls-michael-bradley-seattle",
+					type: "article",
+					sectionId: "football",
+					sectionName: "Football",
+					webPublicationDate: "2017-05-08T13:06:11Z",
+					webTitle: "Toronto FC's impressive win backs up Bradley's 'best team in MLS' claim | Matt Pentz",
+					webUrl: "https://www.theguardian.com/football/blog/2017/may/08/toronto-fc-mls-michael-bradley-seattle",
+					apiUrl: "https://content.guardianapis.com/football/blog/2017/may/08/toronto-fc-mls-michael-bradley-seattle",
+					isHosted: false },
 { id: "world/2017/apr/20/toronto-foreign-tax-homes-housing-market-canada",
 type: "article",
 sectionId: "world",
@@ -101,17 +101,24 @@ isHosted: false
 }
 ]}
 }
+
+
 	#testing data to get a feel for what it is
-		# puts data[:results].class 
+	# puts data[:response].class
+	# puts  data[:response]
+	# 	puts data[:response][:results].class 
 
 		# puts data[:response][:results]
 		# puts data[:response][:results][0]
 
 		# array = data[:response][:results]
 		# puts array
-		# array.each do |single_hash|
-		# 	p single_hash
-		# end 
+		# # array.each do |single_hash|
+		# # 	p single_hash
+		# # end 
+
+
+
 
 
 
@@ -123,14 +130,27 @@ def add_key_value_pair(article_data)
 	end
 	article_count = article_data.count 
 	
-	p article_data
-	p "there are #{article_count} articles"
+	#p article_data
+	#p "there are #{article_count} articles"
 	return article_data
 end 
 
 add_key_value_pair(article_array)
 
 
+def read_article(article_data)
+	random_article = article_data.sample
+	
+	counter = 0
+	counter += 1
+	random_article[:views] = counter
+
+	p article_data
+
+	return random_article
+end 
+
+puts read_article(article_array)
 
 
 
