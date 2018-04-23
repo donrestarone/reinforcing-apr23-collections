@@ -140,17 +140,39 @@ add_key_value_pair(article_array)
 
 def read_article(article_data)
 	random_article = article_data.sample
+	#random_article = article_data[0]
 	
-	counter = 0
-	counter += 1
-	random_article[:views] = counter
+	random_article[:views] += 1
 
-	p article_data
+	#p article_data
 
 	return random_article
 end 
 
-puts read_article(article_array)
+read_article(article_array)
+read_article(article_array)
+read_article(article_array)
+read_article(article_array)
+
+
+
+
+
+def display_views(data)
+	articles = add_key_value_pair(data)
+
+	#for the number of articles invoke the method read article 
+	data.count.times do
+		read_article(data)
+	end
+	
+	data.each do |article|
+		p "Title:#{article[:webTitle]} views: #{article[:views]}"
+	end 
+
+end 
+
+display_views(article_array)
 
 
 
