@@ -167,7 +167,7 @@ def display_views(data)
 	end
 	
 	data.each do |article|
-		p "Title:#{article[:webTitle]} views: #{article[:views]}"
+		p "Title: #{article[:webTitle]} views: #{article[:views]}"
 	end 
 
 end 
